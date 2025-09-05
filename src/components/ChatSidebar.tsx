@@ -137,15 +137,17 @@ const ChatSidebar = ({ isOpen, onToggle }: ChatSidebarProps) => {
 
           {/* Settings */}
           <div className="p-4 border-t border-chat-border">
-            <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
               <Button
                 variant="ghost"
-                className="flex-1 justify-start hover-glow text-chat-text-muted hover:text-chat-text"
+                className="flex-1 justify-start hover-glow text-chat-text-muted hover:text-chat-text min-w-0"
               >
-                <Settings className="w-4 h-4 mr-3" />
-                Cài đặt
+                <Settings className="w-4 h-4 mr-3 flex-shrink-0" />
+                <span className="truncate">Cài đặt</span>
               </Button>
-              <ThemeToggle />
+              <div className="flex-shrink-0">
+                <ThemeToggle />
+              </div>
             </div>
           </div>
         </div>
