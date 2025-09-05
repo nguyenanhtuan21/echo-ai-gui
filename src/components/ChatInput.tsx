@@ -41,34 +41,36 @@ const ChatInput = ({ onSend, disabled = false }: ChatInputProps) => {
   return (
     <div className="border-t border-chat-border bg-chat-background p-4">
       <div className="max-w-4xl mx-auto">
-        <div className="relative flex items-end gap-3 bg-chat-surface rounded-2xl border border-chat-border p-3 hover-glow">
+        <div className="relative flex items-center gap-2 bg-chat-surface rounded-2xl border border-chat-border p-2 hover-glow">
           {/* Attachment Button */}
           <Button
             variant="ghost"
             size="icon"
-            className="flex-shrink-0 w-9 h-9 rounded-lg hover:bg-chat-border text-chat-text-muted hover:text-chat-text"
+            className="flex-shrink-0 w-10 h-10 rounded-xl hover:bg-accent text-chat-text-muted hover:text-chat-text transition-colors"
             disabled={disabled}
           >
             <Paperclip className="w-4 h-4" />
           </Button>
 
-          {/* Text Input */}
-          <Textarea
-            ref={textareaRef}
-            value={message}
-            onChange={handleTextareaChange}
-            onKeyDown={handleKeyDown}
-            placeholder="Nhập tin nhắn của bạn..."
-            className="flex-1 min-h-[44px] max-h-[200px] border-0 bg-transparent resize-none focus:ring-0 focus:outline-none chat-input p-0 text-chat-text placeholder:text-chat-text-muted"
-            disabled={disabled}
-            style={{ height: 'auto' }}
-          />
+          {/* Text Input Container */}
+          <div className="flex-1 min-h-[44px] flex items-center">
+            <Textarea
+              ref={textareaRef}
+              value={message}
+              onChange={handleTextareaChange}
+              onKeyDown={handleKeyDown}
+              placeholder="Nhập tin nhắn của bạn..."
+              className="w-full min-h-[44px] max-h-[200px] border-0 bg-transparent resize-none focus:ring-0 focus:outline-none p-3 text-chat-text placeholder:text-chat-text-muted leading-relaxed"
+              disabled={disabled}
+              style={{ height: 'auto' }}
+            />
+          </div>
 
           {/* Voice Button */}
           <Button
             variant="ghost"
             size="icon"
-            className="flex-shrink-0 w-9 h-9 rounded-lg hover:bg-chat-border text-chat-text-muted hover:text-chat-text"
+            className="flex-shrink-0 w-10 h-10 rounded-xl hover:bg-accent text-chat-text-muted hover:text-chat-text transition-colors"
             disabled={disabled}
           >
             <Mic className="w-4 h-4" />
@@ -78,7 +80,7 @@ const ChatInput = ({ onSend, disabled = false }: ChatInputProps) => {
           <Button
             onClick={handleSubmit}
             disabled={disabled || !message.trim()}
-            className="flex-shrink-0 w-9 h-9 bg-gradient-primary hover:opacity-90 text-white rounded-lg disabled:opacity-50 disabled:cursor-not-allowed p-0"
+            className="flex-shrink-0 w-10 h-10 bg-gradient-primary hover:opacity-90 text-white rounded-xl disabled:opacity-50 disabled:cursor-not-allowed transition-all"
           >
             <Send className="w-4 h-4" />
           </Button>

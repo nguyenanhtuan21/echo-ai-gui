@@ -3,6 +3,7 @@ import { MessageSquare, Plus, Search, Settings, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import ThemeToggle from "@/components/ThemeToggle";
 
 interface ChatHistory {
   id: string;
@@ -136,13 +137,16 @@ const ChatSidebar = ({ isOpen, onToggle }: ChatSidebarProps) => {
 
           {/* Settings */}
           <div className="p-4 border-t border-chat-border">
-            <Button
-              variant="ghost"
-              className="w-full justify-start hover-glow text-chat-text-muted hover:text-chat-text"
-            >
-              <Settings className="w-4 h-4 mr-3" />
-              Cài đặt
-            </Button>
+            <div className="flex items-center justify-between">
+              <Button
+                variant="ghost"
+                className="flex-1 justify-start hover-glow text-chat-text-muted hover:text-chat-text"
+              >
+                <Settings className="w-4 h-4 mr-3" />
+                Cài đặt
+              </Button>
+              <ThemeToggle />
+            </div>
           </div>
         </div>
       </div>
