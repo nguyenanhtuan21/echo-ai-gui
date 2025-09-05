@@ -35,10 +35,10 @@ const ChatMessage = ({ role, content, timestamp }: ChatMessageProps) => {
       </div>
 
       {/* Message Content */}
-      <div className={`flex-1 max-w-[80%] ${isUser ? 'text-right' : 'text-left'}`}>
+      <div className={`flex-1 max-w-[80%]`}>
         <div className={`chat-message ${isUser ? 'chat-message-user' : 'chat-message-assistant'}`}>
           <div className="prose prose-sm max-w-none">
-            <p className="mb-0 leading-relaxed break-words whitespace-pre-wrap">{content}</p>
+            <p className="mb-0 leading-relaxed break-words whitespace-pre-wrap text-left">{content}</p>
           </div>
         </div>
 
@@ -51,11 +51,11 @@ const ChatMessage = ({ role, content, timestamp }: ChatMessageProps) => {
           )}
           
           {!isUser && (
-            <div className="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+            <div className="flex gap-1 opacity-60 hover:opacity-100 transition-opacity duration-200">
               <Button
                 variant="ghost"
                 size="icon"
-                className="w-6 h-6 hover:bg-chat-border rounded-md"
+                className="w-6 h-6 hover:bg-accent rounded-md transition-colors duration-150"
                 onClick={() => navigator.clipboard.writeText(content)}
               >
                 <Copy className="w-3 h-3" />
@@ -63,14 +63,14 @@ const ChatMessage = ({ role, content, timestamp }: ChatMessageProps) => {
               <Button
                 variant="ghost"
                 size="icon"
-                className="w-6 h-6 hover:bg-chat-border rounded-md"
+                className="w-6 h-6 hover:bg-accent rounded-md transition-colors duration-150"
               >
                 <ThumbsUp className="w-3 h-3" />
               </Button>
               <Button
                 variant="ghost"
                 size="icon"
-                className="w-6 h-6 hover:bg-chat-border rounded-md"
+                className="w-6 h-6 hover:bg-accent rounded-md transition-colors duration-150"
               >
                 <ThumbsDown className="w-3 h-3" />
               </Button>

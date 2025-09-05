@@ -238,11 +238,10 @@ All colors MUST be HSL.
   }
   
   .hover-glow {
-    transition: var(--transition-smooth);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   .hover-glow:hover {
-    box-shadow: var(--shadow-glow);
-    transform: translateY(-1px);
+    box-shadow: var(--shadow-card);
   }
 }
