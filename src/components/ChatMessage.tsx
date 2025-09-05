@@ -38,7 +38,7 @@ const ChatMessage = ({ role, content, timestamp }: ChatMessageProps) => {
       <div className={`flex-1 max-w-[80%] ${isUser ? 'text-right' : 'text-left'}`}>
         <div className={`chat-message ${isUser ? 'chat-message-user' : 'chat-message-assistant'}`}>
           <div className="prose prose-sm max-w-none">
-            <p className="mb-0 leading-relaxed">{content}</p>
+            <p className="mb-0 leading-relaxed break-words whitespace-pre-wrap">{content}</p>
           </div>
         </div>
 
