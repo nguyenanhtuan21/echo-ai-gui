@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu } from "lucide-react";
+import { Menu, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import ChatSidebar from "@/components/ChatSidebar";
@@ -82,9 +82,20 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-            <span className="text-sm text-chat-text-muted">Trực tuyến</span>
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+              <span className="text-sm text-chat-text-muted">Trực tuyến</span>
+            </div>
+            
+            <Button
+              variant="outline"
+              size="sm"
+              className="hover-glow rounded-lg border-chat-border hover:bg-chat-border/50"
+            >
+              <User className="w-4 h-4 mr-2" />
+              Đăng nhập
+            </Button>
           </div>
         </div>
 
