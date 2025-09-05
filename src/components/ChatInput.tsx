@@ -60,7 +60,7 @@ const ChatInput = ({ onSend, disabled = false }: ChatInputProps) => {
               onChange={handleTextareaChange}
               onKeyDown={handleKeyDown}
               placeholder="Nhập tin nhắn của bạn..."
-              className="w-full min-h-[36px] max-h-[120px] border-0 bg-transparent resize-none focus:ring-0 focus:outline-none py-2 px-2 text-chat-text placeholder:text-chat-text-muted text-sm leading-normal"
+              className="w-full min-h-[36px] max-h-[120px] border-0 bg-transparent resize-none focus:ring-0 focus:outline-none py-2.5 px-2 text-chat-text placeholder:text-chat-text-muted text-sm leading-normal flex items-center"
               disabled={disabled}
               style={{ height: 'auto' }}
             />
